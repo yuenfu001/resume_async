@@ -16,8 +16,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+scheme_view = get_schema_view(
+    openapi.Info(
+        title="resume_async",
+        default_version="V1",
+        description="Creating Async API for user and resume",
+        terms_of_service="https://www.ouch.com/terms/",
+        contact=openapi.Contact(email="liuyuenfu.com"), #enter your email here
+    license=openapi.License(name="Liu Yuenfu License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("",include("resume.urls")),
+    path("resume/",include("resume.urls")),
+    path("",scheme_view.with_ui('swagger',cache_timeout=0),name="schema-swagger-ui"),
+    path("redoc/",scheme_view.with_ui('redoc',cache_timeout=0),name="schema-redoc"),
 ]
