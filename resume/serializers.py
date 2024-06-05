@@ -8,7 +8,7 @@ from django.contrib.auth import get_user_model
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id","username","email")
+        fields = ("id","username","password")
         # fields = ('id', 'first_name', 'last_name', 'email','phone_number','address','middle_name')
 
 #Register Serializer

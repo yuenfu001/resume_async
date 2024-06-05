@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "drf_yasg",
 ]
 
+ASGI_APPLICATION = 'core.asgi.application'
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS':{
         "Basic":{
