@@ -25,7 +25,7 @@ SECRET_KEY = config("KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("BUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','*']
 
 
 # Application definition
