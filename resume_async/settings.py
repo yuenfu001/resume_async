@@ -27,8 +27,8 @@ SECRET_KEY = "AzPTEoJgCw4xWpxmxwufbQGjXrQTRPnFCBRRtr5BvlwOneU-Mw_-osnOY64dak0_iT
 # DEBUG = config("BUG")
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','*']
-
+ALLOWED_HOSTS = ['resumeasync-production.up.railway.app','*']
+CSRF_TRUSTED_ORIGINS = ['https://resumeasync-production.up.railway.app']
 
 # Application definition
 
