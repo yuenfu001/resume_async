@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['resumeasync-production.up.railway.app','*']
 CSRF_TRUSTED_ORIGINS = ['https://resumeasync-production.up.railway.app']
 
 DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"  # use the apprropriate storage for backend here
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Application definition
 
 INSTALLED_APPS = [
@@ -65,6 +66,7 @@ REST_FRAMEWORK = {
 }
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
